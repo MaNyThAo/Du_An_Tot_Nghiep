@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doanh thu</title>
+    <link rel="stylesheet" href="DoanhThu.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-vin">
+            <img src="img/logo XÀI TẠM-03.png" alt="Logo" width="200px">
+            <h2>Kênh người bán</h2>
+            <div class="header-ben">
+                <img src="img/brn.jpg" alt="img user name" width="100px">
+                <span>User name</span>
+            </div>
+        </div>
+    </div>
+    <div class="Container">
+        <ul class="container-ken">
+            <li class="container-quen">Quản lý đơn hàng</li>
+            <li class="container-quen"><a href="#" style="color: blue;">Tất cả đơn hàng</a></li>
+            <li class="container-quen">Quản lý sản phẩm</li>
+            <li class="container-quen"><a href="#" style="color: slategray;">Tất cả sản phẩm</a></li>
+            <li class="container-quen"><a href="#" style="color: slategray;">Thêm sản phẩm</a></li>
+        </ul>
+    </div>
+
+
+    <div class="main-content">
+        <div class="main">
+            <div class="tables">
+                <div class="tables">Tất cả sản phẩm</div>
+                <div class="tables">Sản phẩm ngừng bán</div>
+                <div class="tables">Ăn gậy</div>
+                <button class="button-new">Thêm mới</button>
+            </div>
+           <input type="text" placeholder="Tìm kiếm" class="main-search"> 
+           <table class="table">
+            <thead>
+              <tr>
+                <th><input type="checkbox"></th>
+                <th>Tên sản phẩm</th>
+                <th>Số lượng</th>
+                <th>Giá bán</th>
+                <th>Đã bán</th>
+                <th>Trạng thái</th>
+                <th>Hành động</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td>Điện thoại</td>
+                <td>9999</td>
+                <td>5.000.000đ</td>
+                <td>123</td>
+                <td><span class="status-active">Hoạt động</span></td>
+                <td>
+                  <span class="icon">🗑</span>
+                  <span class="icon">🛠</span>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td>Táo đỏ</td>
+                <td>9999</td>
+                <td>5.000.000đ</td>
+                <td>123</td>
+                <td><span class="status-active">Hoạt động</span></td>
+                <td>
+                  <span class="icon">🗑</span>
+                  <span class="icon">🛠</span>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td>Chuối sấy</td>
+                <td>9999</td>
+                <td>5.000.000đ</td>
+                <td>123</td>
+                <td><span class="status-inactive">Ăn gậy</span></td>
+                <td>
+                  <span class="icon">🗑</span>
+                  <span class="icon">🛠</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>          
+        </div>
+    </div>
+    <script src="DoanhThu.js"></script>
+</body>
+</html>
