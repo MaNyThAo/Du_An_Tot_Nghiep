@@ -87,7 +87,13 @@ body {
     border-radius: 8px;
     border: 1px solid #ddd;
 }
-
+.active-link {
+    color: blue !important;
+    font-weight: bold;
+}      
+.hidden {
+    display: none;
+}
 /* Tabs */
 .tables {
     display: flex;
@@ -129,6 +135,11 @@ body {
     border: 1px solid #ccc;
     border-radius: 4px;
 }
+.search-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
 
 /* Table Styling */
 .table {
@@ -207,4 +218,5 @@ body {
   .icon:hover {
     color: #ee4d2d;
   }
+ 
   

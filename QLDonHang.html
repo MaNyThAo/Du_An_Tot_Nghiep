@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doanh thu</title>
+    <link rel="stylesheet" href="DoanhThu.css">
+
+</head>
+<body>
+    <div class="header">
+        <div class="header-vin">
+            <img src="img/logo XÀI TẠM-03.png" alt="Logo" width="200px">
+            <h2>Kênh người bán</h2>
+            <div class="header-ben">
+                <img src="img/brn.jpg" alt="img user name" width="100px">
+                <span>User name</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="Container">
+        <ul class="container-ken">
+            <li class="container-quen">Quản lý đơn hàng</li>
+            <li class="container-quen">
+                <a href="#" id="link-orders" onclick="showSection('orders')" style="color: slategray">Tất cả đơn hàng</a>
+            </li>
+            <li class="container-quen">Quản lý sản phẩm</li>
+            <li class="container-quen">
+                <a href="#" id="link-products" onclick="showSection('products')" style="color: slategray;">Tất cả sản phẩm</a>
+            </li>
+            <li class="container-quen">
+                <a href="#" style="color: slategray;">Thêm sản phẩm</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <!-- Khu vực hiển thị sản phẩm -->
+        <div id="products">
+            <div class="main">
+                <div class="tables">
+                    <div class="tables">Tất cả sản phẩm</div>
+                    <div class="tables">Sản phẩm ngừng bán</div>
+                    <div class="tables">Ăn gậy</div>
+                    <button class="button-new">Thêm mới</button>
+                </div>
+                <div class="search-container">
+                    <input type="text" class="main-search" placeholder="Tìm kiếm sản phẩm...">
+                </div>        
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox"></th>
+                            <th>Tên sản phẩm</th>
+                            <th>Số lượng</th>
+                            <th>Giá bán</th>
+                            <th>Đã bán</th>
+                            <th>Trạng thái</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>Điện thoại</td>
+                            <td>9999</td>
+                            <td>5.000.000đ</td>
+                            <td>123</td>
+                            <td><span class="status-active">Hoạt động</span></td>
+                            <td>
+                                <span class="icon">🗑</span>
+                                <span class="icon">🛠</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>Táo đỏ</td>
+                            <td>9999</td>
+                            <td>5.000.000đ</td>
+                            <td>123</td>
+                            <td><span class="status-active">Hoạt động</span></td>
+                            <td>
+                                <span class="icon">🗑</span>
+                                <span class="icon">🛠</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>Chuối sấy</td>
+                            <td>9999</td>
+                            <td>5.000.000đ</td>
+                            <td>123</td>
+                            <td><span class="status-inactive">Ăn gậy</span></td>
+                            <td>
+                                <span class="icon">🗑</span>
+                                <span class="icon">🛠</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td>Chả cá</td>
+                            <td>9999</td>
+                            <td>5.000.000đ</td>
+                            <td>123</td>
+                            <td><span class="status-active">Hoạt động</span></td>
+                            <td>
+                                <span class="icon">🗑</span>
+                                <span class="icon">🛠</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>          
+            </div>
+        </div>
+
+        <!-- Khu vực hiển thị đơn hàng -->
+        <div id="orders" class="hidden">
+            <div class="main">
+                <h2>Danh sách Đơn hàng</h2>
+                <table border="1" width="100%" cellspacing="0" cellpadding="5">
+                    <tr>
+                        <th>Mã đơn hàng</th>
+                        <th>Trạng thái</th>
+                        <th>Thời gian đặt hàng</th>
+                        <th>Tổng hóa đơn</th>
+                    </tr>
+                    <tr>
+                        <td>#0123456789</td>
+                        <td>Chờ xác nhận</td>
+                        <td>20:30 14/11/2024</td>
+                        <td>888.998đ</td>
+                    </tr>
+                    <tr>
+                        <td>#2468101214</td>
+                        <td>Hoàn thành</td>
+                        <td>07:00 17/05/2025</td>
+                        <td>888.998đ</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function showSection(section) {
+        // Lấy phần hiển thị sản phẩm và đơn hàng
+        var products = document.getElementById("products");
+        var orders = document.getElementById("orders");
+
+        // Ẩn cả hai phần
+        products.classList.add("hidden");
+        orders.classList.add("hidden");
+
+        // Xóa class "active-link" của cả hai mục
+        document.getElementById("link-products").classList.remove("active-link");
+        document.getElementById("link-orders").classList.remove("active-link");
+
+        // Hiển thị phần được chọn và đổi màu link
+        if (section === 'products') {
+            products.classList.remove("hidden");
+            document.getElementById("link-products").classList.add("active-link");
+        } else if (section === 'orders') {
+            orders.classList.remove("hidden");
+            document.getElementById("link-orders").classList.add("active-link");
+        }
+    }
+    </script>
+</body>
+</html>

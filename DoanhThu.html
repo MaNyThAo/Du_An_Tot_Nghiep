@@ -20,9 +20,9 @@
     <div class="Container">
         <ul class="container-ken">
             <li class="container-quen">Quản lý đơn hàng</li>
-            <li class="container-quen"><a href="#" style="color: blue;">Tất cả đơn hàng</a></li>
+            <li class="container-quen"><a href="#" style="color: slategray">Tất cả đơn hàng</a></li>
             <li class="container-quen">Quản lý sản phẩm</li>
-            <li class="container-quen"><a href="#" style="color: slategray;">Tất cả sản phẩm</a></li>
+            <li class="container-quen"><a href="#" style="color: blue;">Tất cả sản phẩm</a></li>
             <li class="container-quen"><a href="#" style="color: slategray;">Thêm sản phẩm</a></li>
         </ul>
     </div>
@@ -36,7 +36,9 @@
                 <div class="tables">Ăn gậy</div>
                 <button class="button-new">Thêm mới</button>
             </div>
-           <input type="text" placeholder="Tìm kiếm" class="main-search"> 
+            <div class="search-container">
+              <input type="text" class="main-search" placeholder="Tìm kiếm sản phẩm...">
+          </div>        
            <table class="table">
             <thead>
               <tr>
@@ -53,7 +55,7 @@
               <tr>
                 <td><input type="checkbox"></td>
                 <td>Điện thoại</td>
-                <td>9999</td>
+                <td> 9999</td>
                 <td>5.000.000đ</td>
                 <td>123</td>
                 <td><span class="status-active">Hoạt động</span></td>
@@ -86,10 +88,31 @@
                   <span class="icon">🛠</span>
                 </td>
               </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td>Chả cá</td>
+                <td>9999</td>
+                <td>5.000.000đ</td>
+                <td>123</td>
+                <td><span class="status-active">Hoạt động</span></td>
+                <td>
+                  <span class="icon">🗑</span>
+                  <span class="icon">🛠</span>
+                </td>
+              </tr>
             </tbody>
           </table>          
         </div>
     </div>
-    <script src="DoanhThu.js"></script>
+    <script>
+      function showSection(section) {
+          // Ẩn tất cả phần nội dung
+          document.getElementById("products").classList.remove("active");
+          document.getElementById("orders").classList.remove("active");
+
+          // Hiển thị phần được chọn
+          document.getElementById(section).classList.add("active");
+      }
+  </script>
 </body>
 </html>
