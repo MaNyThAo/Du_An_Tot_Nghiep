@@ -342,4 +342,164 @@ tbody td {
     justify-content: flex-end;
     margin-top: 20px;
 }
+ul li a {
+    text-decoration: none;
+    color: #333; /* Màu chữ mặc định */
+    font-size: 16px;
+    display: block;
+    padding: 8px 10px;
+    transition: color 0.3s ease;
+}
 
+ul li a:hover {
+    color: blue; /* Màu xanh khi di chuột */
+}
+
+/* Khi nút được chọn, chỉ thay đổi màu chữ */
+ul li a.active {
+    color: blue !important;
+}
+/* Xóa nền trắng dư thừa phía sau */
+.Content-ka {
+    background: none;
+    max-width: 100%;
+    padding: 20px;
+    margin-top: 10px;
+    padding-top: 0;
+    display: flex;
+}
+
+/* Sidebar bên trái */
+.Sidebar-ka {
+    width: 240px;
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+}
+
+.Sidebar-ka a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+}
+
+.Sidebar-ka a:hover {
+    background-color: #444;
+}
+
+/* Nội dung chính */
+.MainContent-ka {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+/* Thanh top bar */
+.top-bar-ka {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Thông tin người dùng */
+.user-info {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Căn chỉnh lại form */
+.product-form-ka {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: px;
+    box-shadow: 0 5px  4px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Định dạng nhóm label và input */
+.form-group-ka {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+label {
+    font-weight: bold;
+    width: 200px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.input-container {
+    flex: 1;
+    display: flex;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+/* Hộp ảnh sản phẩm */
+.img-box-ka {
+    width: 120px;
+    height: 120px;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed #aaa;
+    text-align: center;
+    color: #555;
+}
+
+/* Nhóm nút */
+.buttons-ka {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Nút bấm */
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.Cancel {
+    background-color: #ccc;
+    margin-right: 10px;
+}
+
+.Cancel:hover {
+    background-color: #999;
+}
