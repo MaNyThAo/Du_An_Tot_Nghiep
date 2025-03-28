@@ -218,5 +218,128 @@ body {
   .icon:hover {
     color: #ee4d2d;
   }
- 
-  
+  .main {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+/* Tabs điều hướng */
+.order-tabs {
+    display: flex;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 15px;
+}
+
+.tab {
+    background: none;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #666;
+}
+
+.tab:hover, .tab:focus {
+    border-bottom: 2px solid #ee4d2d;
+    color: #ee4d2d;
+}
+
+/* Bảng danh sách đơn hàng */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+thead th {
+    background: #f1f1f1;
+    padding: 10px;
+    text-align: left;
+}
+
+tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Trạng thái đơn hàng */
+.status-completed {
+    display: inline-block;
+    background: #28a745;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Nút chi tiết */
+.detail-btn {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.detail-btn:hover {
+    background: #ee4d2d;
+    color: white;
+    border-color: #ee4d2d;
+}
+
+/* Căn chỉnh bảng sản phẩm */
+.product-container {
+    width: 60%; /* Giữ kích thước hợp lý */
+    max-width: 900px; /* Giới hạn độ rộng */
+    margin: 20px auto 20px 250px; /* Đẩy bảng sang phải */
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Căn chỉnh phần thông tin */
+.info-section,
+.sales-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 12px;
+}
+
+/* Căn chỉnh label */
+.info-section label,
+.sales-info label {
+    width: 220px; /* Tăng chiều rộng để đồng bộ */
+    text-align: right;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+/* Căn chỉnh input, select, textarea */
+.info-section input,
+.info-section textarea,
+.sales-info input,
+.sales-info select {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    min-width: 320px; /* Giữ kích thước ổn định */
+}
+
+/* Căn chỉnh phần thông tin bán hàng */
+.product-table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Nhóm nút bấm */
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
