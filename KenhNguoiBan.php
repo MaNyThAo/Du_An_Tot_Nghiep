@@ -1,3 +1,20 @@
+<?php
+// Kết nối database
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "DATN";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+  die("Kết nối thất bại: " . $conn->connect_error);
+}
+
+// Lấy dữ liệu từ bảng products
+$sql = "SELECT * FROM San_Pham";
+$result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -59,58 +76,31 @@
               <th>Giá bán</th>
               <th>Đã bán</th>
               <th>Trạng thái</th>
-              <th>Hành động</th>
+              <th>Thao tác</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td><input type="checkbox"></td>
-              <td>Điện thoại</td>
-              <td>9999</td>
-              <td>5.000.000đ</td>
-              <td>123</td>
-              <td><span class="status-active">Hoạt động</span></td>
-              <td>
-                <span class="icon">🗑</span>
-                <span class="icon">🛠</span>
-              </td>
-            </tr>
-            <tr>
-              <td><input type="checkbox"></td>
-              <td>Táo đỏ</td>
-              <td>9999</td>
-              <td>5.000.000đ</td>
-              <td>123</td>
-              <td><span class="status-active">Hoạt động</span></td>
-              <td>
-                <span class="icon">🗑</span>
-                <span class="icon">🛠</span>
-              </td>
-            </tr>
-            <tr>
-              <td><input type="checkbox"></td>
-              <td>Chuối sấy</td>
-              <td>9999</td>
-              <td>5.000.000đ</td>
-              <td>123</td>
-              <td><span class="status-inactive">Ăn gậy</span></td>
-              <td>
-                <span class="icon">🗑</span>
-                <span class="icon">🛠</span>
-              </td>
-            </tr>
-            <tr>
-              <td><input type="checkbox"></td>
-              <td>Chả cá</td>
-              <td>9999</td>
-              <td>5.000.000đ</td>
-              <td>123</td>
-              <td><span class="status-active">Hoạt động</span></td>
-              <td>
-                <span class="icon">🗑</span>
-                <span class="icon">🛠</span>
-              </td>
-            </tr>
+            <?php
+            if ($result->num_rows > 0) {
+              while ($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td><input type='checkbox'></td>";
+                echo "<td>" . $row["Ten_San_Pham"] . "</td>";
+                echo "<td>" . $row["So_Luong_Ton"] . "</td>";
+                echo "<td>" . number_format($row["Gia_Ban"], 0, ',', '.') . "đ</td>";
+                echo "<td>" . $row["Da_Ban"] . "</td>";
+                echo "<td><span class='" . ($row["Trang_Thai_San_Pham"] == 'Đang bán' ? "status-active" : "status-inactive") . "'>" . $row["Trang_Thai_San_Pham"] . "</span></td>";
+                echo "<td>
+                <span class='icon'>🗑</span>
+                <span class='icon'>🛠</span>
+              </td>";
+                echo "</tr>";
+              }
+            } else {
+              echo "<tr><td colspan='7'>Không có sản phẩm nào</td></tr>";
+            }
+
+            ?>
           </tbody>
         </table>
       </div>
@@ -139,30 +129,31 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td><input type="checkbox"></td>
-              <td>#0123456789</td>
-              <td>Chờ xác nhận</td>
-              <td>20:30 14/11/2024</td>
-              <td>₫888.998</td>
-              <td><button class="detail-btnss">Chi tiết</button></td>
-            </tr>
-            <tr>
-              <td><input type="checkbox"></td>
-              <td>#2468101214</td>
-              <td><span class="status-completed">Hoàn thành</span></td>
-              <td>07:00 17/05/2025</td>
-              <td>₫888.998</td>
-              <td><button class="detail-btnss">Chi tiết</button></td>
-            </tr>
-            <tr>
-              <td><input type="checkbox"></td>
-              <td>#2468101214</td>
-              <td><span class="status-completed">Hoàn thành</span></td>
-              <td>07:00 17/05/2025</td>
-              <td>₫888.998</td>
-              <td><button class="detail-btnss">Chi tiết</button></td>
-            </tr>
+            <?php
+            // Truy vấn dữ liệu đơn hàng
+            $sql = "SELECT dhs.ID_Don_Hang_Seller, dhs.Trang_Thai_Don_Hang, hd.Ngay_Dat_Hang, hd.Tong_Tien_Hoa_Don FROM `Don_Hang_Seller` dhs INNER JOIN Hoa_Don hd ON dhs.ID_Hoa_Don = hd.ID_Hoa_Don";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+              while ($row = $result->fetch_assoc()) {
+                $ma_don = "#DH" . str_pad($row["ID_Don_Hang_Seller"], 8, "0", STR_PAD_LEFT);
+                $trang_thai = $row["Trang_Thai_Don_Hang"];
+                $thoi_gian = date("H:i d/m/Y", strtotime($row["Ngay_Dat_Hang"]));
+                $tong_tien = number_format($row["Tong_Tien_Hoa_Don"], 0, ',', '.');
+
+                echo "<tr>";
+                echo "<td><input type='checkbox'></td>";
+                echo "<td>$ma_don</td>";
+                echo "<td><span class='status-" . strtolower(str_replace(' ', '-', $trang_thai)) . "'>$trang_thai</span></td>";
+                echo "<td>$thoi_gian</td>";
+                echo "<td>₫$tong_tien</td>";
+                echo "<td><button class='detail-btnss'>Chi tiết</button></td>";
+                echo "</tr>";
+              }
+            } else {
+              echo "<tr><td colspan='6'>Không có đơn hàng nào</td></tr>";
+            }
+            ?>
           </tbody>
         </table>
       </div>
@@ -241,3 +232,5 @@
 </body>
 
 </html>
+
+<?php $conn->close(); ?>
