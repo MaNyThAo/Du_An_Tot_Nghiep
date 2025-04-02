@@ -228,7 +228,7 @@ $result = $conn->query($sql);
     </div>
   </div>
 
-  <script src="/GitClone/Du_An_Tot_Nghiep/KenhNguoiBan.js"></script>
+  <script src="KenhNguoiBan.js"></script>
 </body>
 
 </html>
