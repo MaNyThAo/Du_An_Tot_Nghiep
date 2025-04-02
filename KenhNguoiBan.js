@@ -45,3 +45,36 @@ document.addEventListener("DOMContentLoaded", function() {
     // Mặc định hiển thị danh sách sản phẩm khi tải trang
     showSection(productsSection, allProductsBtn);
 });
+document.addEventListener("DOMContentLoaded", function () {
+    // Lấy tất cả các tab trạng thái đơn hàng
+    const orderTabs = document.querySelectorAll(".tables .tables");
+    const rows = document.querySelectorAll("#orders tbody tr");
+
+    orderTabs.forEach(tab => {
+        tab.addEventListener("click", function () {
+            // Loại bỏ lớp active khỏi tất cả các tab
+            orderTabs.forEach(t => t.classList.remove("active"));
+            this.classList.add("active");
+
+            const filter = this.textContent.trim();
+            
+            rows.forEach(row => {
+                const status = row.children[2].textContent.trim(); // Lấy trạng thái đơn hàng
+                if (filter === "Tất cả" || status === filter) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        });
+    });
+});
+
+document.querySelectorAll('.icon').forEach(icon => {
+    icon.addEventListener('click', function () {
+      alert('Chức năng này sẽ được thêm sau!');
+    });
+  });
+// Thay vì cái lặp lại như .tables .tables
+const orderTabs = document.querySelectorAll(".order-tab");
+  
