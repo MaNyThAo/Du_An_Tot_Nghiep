@@ -82,10 +82,12 @@ body {
 }
 
 .main {
-    background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     border: 1px solid #ddd;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
 }
 .active-link {
     color: blue !important;
@@ -218,13 +220,6 @@ body {
   .icon:hover {
     color: #ee4d2d;
   }
-  .main {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-}
 /* Tabs điều hướng */
 .order-tabs {
     display: flex;
@@ -359,3 +354,376 @@ ul li a:hover {
 ul li a.active {
     color: blue !important;
 }
+/* Tổng thể container */
+.Container-ka {
+    margin-left: 269px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+}
+
+/* Nội dung chính */
+.Content-ka {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    max-width: 1300px; /* tăng chiều rộng */
+    margin: auto;
+}
+
+
+/* Tiêu đề */
+.Content-ka h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    color: #333;
+}
+
+/* Nhóm form */
+.from-group-ka {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+/* Label */
+.from-group-ka label {
+    width: 180px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+    text-align: right;
+    margin-right: 20px;
+}
+
+/* Input và textarea */
+.from-group-ka input[type="text"],
+.from-group-ka textarea {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    min-width: 300px;
+}
+
+.from-group-ka textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+/* Nút thêm nhóm phân loại */
+.from-group-ka button {
+    padding: 8px 14px;
+    font-size: 14px;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #333;
+}
+
+.from-group-ka button:hover {
+    background-color: #eee;
+}
+
+/* Ảnh upload */
+.img-box-ka {
+    border: 2px dashed #ccc;
+    height: 130px;
+    width: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    flex-shrink: 0;
+    color: #999;
+    text-align: center;
+    font-size: 14px;
+    background-color: #fafafa;
+}
+
+.img-box-ka img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.img-box-ka .img-text {
+    position: absolute;
+    pointer-events: none;
+}
+
+/* Nút Hủy & Thêm sản phẩm */
+.buttons-ka {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+    gap: 15px;
+}
+
+.Cancel,
+.Submit {
+    padding: 10px 18px;
+    font-size: 15px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.Cancel {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.Cancel:hover {
+    background-color: #ccc;
+}
+
+.Submit {
+    background-color: #007bff;
+    color: white;
+}
+
+.Submit:hover {
+    background-color: #0056b3;
+}
+
+/* Giao diện khối chi tiết sản phẩm */
+.Container-Chitiet {
+    margin-left: 240px;
+    padding: 40px;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+}
+
+/* Tiêu đề */
+.Container-Chitiet h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.Container-Chitiet hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+/* Nhóm thông tin */
+.chitiet-group {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+/* Label trái */
+.chitiet-group label {
+    width: 180px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 8px;
+    text-align: right;
+    margin-right: 20px;
+}
+
+/* Input và textarea */
+.chitiet-group input[type="text"],
+.chitiet-group textarea {
+    flex: 1;
+    padding: 10px 12px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.chitiet-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+/* Nhóm phân loại */
+.chitiet-variants {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.chitiet-btn {
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 14px;
+}
+
+.chitiet-btn:hover {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+/* Bảng phân loại */
+.chitiet-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    margin-top: 10px;
+}
+
+.chitiet-table th,
+.chitiet-table td {
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 14px;
+}
+
+.chitiet-table th {
+    background-color: #f1f1f1;
+    font-weight: bold;
+}
+
+/* Nút sửa */
+.chitiet-submit {
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.chitiet-submit:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive nhẹ */
+@media (max-width: 768px) {
+    .chitiet-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .chitiet-group label {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+}
+.tables .tables {
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.tables .tables.active {
+    border-bottom: 2px solid #007bff;
+    color: #007bff;
+}
+    
+    /* Giao diện phần chi tiết (Container-sua giống Container-Chitiet) */
+.Container-sua {
+    margin-left: 240px;
+    padding: 40px;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+}
+
+/* Tiêu đề và gạch chân */
+.Container-sua h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.Container-sua hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+/* Nhóm input và label */
+.sua-group {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.sua-group label {
+    width: 180px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 8px;
+    text-align: right;
+    margin-right: 20px;
+}
+
+.sua-group input[type="text"],
+.sua-group textarea {
+    flex: 1;
+    padding: 10px 12px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.sua-group textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.sua-group span {
+    flex: 1;
+    padding-top: 8px;
+    font-size: 15px;
+}
+
+/* Nút quay lại hoặc sửa */
+.sua-submit {
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.sua-submit:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive nhẹ */
+@media (max-width: 768px) {
+    .sua-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .sua-group label {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+
+    .sua-group span {
+        padding: 0;
+    }
+}
+

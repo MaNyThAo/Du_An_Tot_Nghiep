@@ -10,7 +10,7 @@
 <body>
     <div class="header">
         <div class="header-vin">
-            <img src="img/logo XÀI TẠM-03.png" alt="Logo" width="200px">
+            <img src="img/logo.jpg" alt="Logo" width="80px">
             <h2>Kênh người bán</h2>
             <div class="header-ben">
                 <img src="img/brn.jpg" alt="img user name" width="100px">
@@ -37,12 +37,15 @@
 
     <div class="main-content">
         <!-- Khu vực hiển thị sản phẩm -->
-        <div id="products">
-            <div class="main">
+       <div id="products">
+             <div class="main">
                 <div class="tables">
-                    <div class="tables">Tất cả sản phẩm</div>
-                    <div class="tables">Sản phẩm ngừng bán</div>
-                    <div class="tables">Ăn gậy</div>
+                  <td><span class="status-active">Hoạt động</span></td>
+                  <!-- hoặc -->
+                  <td><span class="status-inactive">Ngừng bán</span></td>
+                  <!-- hoặc -->
+                  <td><span class="status-warning">Ăn gậy</span></td>
+
                     <button class="button-new">Thêm mới</button>
                 </div>
                 <div class="search-container">
@@ -50,18 +53,20 @@
                 </div>        
                 <table class="table">
                     <thead>
-                        <tr>
-                            <th><input type="checkbox"></th>
-                            <th>Tên sản phẩm</th>
-                            <th>Số lượng</th>
-                            <th>Giá bán</th>
-                            <th>Đã bán</th>
-                            <th>Trạng thái</th>
-                            <th>Hành động</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
+                            <tr>
+                              <td><input type="checkbox"></td>
+                              <td>Điện thoại</td>
+                              <td>9999</td>
+                              <td>5.000.000đ</td>
+                              <td>123</td>
+                              <td><span class="status-active">Hoạt động</span></td>
+                              <td>
+                                  <span class="icon">🗑</span>
+                                  <span class="icon">🛠</span>
+
+                              </td>
+                          </tr>
+                          <tr>
                             <td><input type="checkbox"></td>
                             <td>Điện thoại</td>
                             <td>9999</td>
@@ -71,10 +76,11 @@
                             <td>
                                 <span class="icon">🗑</span>
                                 <span class="icon">🛠</span>
+
                             </td>
                         </tr>
                         <tr>
-                          <td><input type="checkbox"></td>
+                          <td><input type ="checkbox"></td>
                           <td>Điện thoại</td>
                           <td>9999</td>
                           <td>5.000.000đ</td>
@@ -83,195 +89,10 @@
                           <td>
                               <span class="icon">🗑</span>
                               <span class="icon">🛠</span>
+
                           </td>
                       </tr>
-                      <tr>
-                        <td><input type="checkbox"></td>
-                        <td>Điện thoại</td>
-                        <td>9999</td>
-                        <td>5.000.000đ</td>
-                        <td>123</td>
-                        <td><span class="status-active">Hoạt động</span></td>
-                        <td>
-                            <span class="icon">🗑</span>
-                            <span class="icon">🛠</span>
-                        </td>
-                    </tr>
-                    <tr>
-                      <td><input type="checkbox"></td>
-                      <td>Điện thoại</td>
-                      <td>9999</td>
-                      <td>5.000.000đ</td>
-                      <td>123</td>
-                      <td><span class="status-active">Hoạt động</span></td>
-                      <td>
-                          <span class="icon">🗑</span>
-                          <span class="icon">🛠</span>
-                      </td>
-                  </tr>
-                  <tr>
-                    <td><input type="checkbox"></td>
-                    <td>Điện thoại</td>
-                    <td>9999</td>
-                    <td>5.000.000đ</td>
-                    <td>123</td>
-                    <td><span class="status-active">Hoạt động</span></td>
-                    <td>
-                        <span class="icon">🗑</span>
-                        <span class="icon">🛠</span>
-                    </td>
-                </tr>
-                <tr>
-                  <td><input type="checkbox"></td>
-                  <td>Điện thoại</td>
-                  <td>9999</td>
-                  <td>5.000.000đ</td>
-                  <td>123</td>
-                  <td><span class="status-active">Hoạt động</span></td>
-                  <td>
-                      <span class="icon">🗑</span>
-                      <span class="icon">🛠</span>
-                  </td>
-              </tr>
-              <tr>
-                <td><input type="checkbox"></td>
-                <td>Điện thoại</td>
-                <td>9999</td>
-                <td>5.000.000đ</td>
-                <td>123</td>
-                <td><span class="status-active">Hoạt động</span></td>
-                <td>
-                    <span class="icon">🗑</span>
-                    <span class="icon">🛠</span>
-                </td>
-            </tr>
-            <tr>
-              <td><input type="checkbox"></td>
-              <td>Điện thoại</td>
-              <td>9999</td>
-              <td>5.000.000đ</td>
-              <td>123</td>
-              <td><span class="status-active">Hoạt động</span></td>
-              <td>
-                  <span class="icon">🗑</span>
-                  <span class="icon">🛠</span>
-              </td>
-          </tr>
-
-          <tr>
-            <td><input type="checkbox"></td>
-            <td>Điện thoại</td>
-            <td>9999</td>
-            <td>5.000.000đ</td>
-            <td>123</td>
-            <td><span class="status-active">Hoạt động</span></td>
-            <td>
-                <span class="icon">🗑</span>
-                <span class="icon">🛠</span>
-            </td>
-        </tr>                        <tr>
-          <td><input type="checkbox"></td>
-          <td>Điện thoại</td>
-          <td>9999</td>
-          <td>5.000.000đ</td>
-          <td>123</td>
-          <td><span class="status-active">Hoạt động</span></td>
-          <td>
-              <span class="icon">🗑</span>
-              <span class="icon">🛠</span>
-          </td>
-      </tr>                        <tr>
-        <td><input type="checkbox"></td>
-        <td>Điện thoại</td>
-        <td>9999</td>
-        <td>5.000.000đ</td>
-        <td>123</td>
-        <td><span class="status-active">Hoạt động</span></td>
-        <td>
-            <span class="icon">🗑</span>
-            <span class="icon">🛠</span>
-        </td>
-    </tr>                        <tr>
-      <td><input type="checkbox"></td>
-      <td>Điện thoại</td>
-      <td>9999</td>
-      <td>5.000.000đ</td>
-      <td>123</td>
-      <td><span class="status-active">Hoạt động</span></td>
-      <td>
-          <span class="icon">🗑</span>
-          <span class="icon">🛠</span>
-      </td>
-  </tr>                        <tr>
-    <td><input type="checkbox"></td>
-    <td>Điện thoại</td>
-    <td>9999</td>
-    <td>5.000.000đ</td>
-    <td>123</td>
-    <td><span class="status-active">Hoạt động</span></td>
-    <td>
-        <span class="icon">🗑</span>
-        <span class="icon">🛠</span>
-    </td>
-</tr>                        <tr>
-  <td><input type="checkbox"></td>
-  <td>Điện thoại</td>
-  <td>9999</td>
-  <td>5.000.000đ</td>
-  <td>123</td>
-  <td><span class="status-active">Hoạt động</span></td>
-  <td>
-      <span class="icon">🗑</span>
-      <span class="icon">🛠</span>
-  </td>
-</tr>                        <tr>
-  <td><input type="checkbox"></td>
-  <td>Điện thoại</td>
-  <td>9999</td>
-  <td>5.000.000đ</td>
-  <td>123</td>
-  <td><span class="status-active">Hoạt động</span></td>
-  <td>
-      <span class="icon">🗑</span>
-      <span class="icon">🛠</span>
-  </td>
-</tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>Táo đỏ</td>
-                            <td>9999</td>
-                            <td>5.000.000đ</td>
-                            <td>123</td>
-                            <td><span class="status-active">Hoạt động</span></td>
-                            <td>
-                                <span class="icon">🗑</span>
-                                <span class="icon">🛠</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>Chuối sấy</td>
-                            <td>9999</td>
-                            <td>5.000.000đ</td>
-                            <td>123</td>
-                            <td><span class="status-inactive">Ăn gậy</span></td>
-                            <td>
-                                <span class="icon">🗑</span>
-                                <span class="icon">🛠</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox"></td>
-                            <td>Chả cá</td>
-                            <td>9999</td>
-                            <td>5.000.000đ</td>
-                            <td>123</td>
-                            <td><span class="status-active">Hoạt động</span></td>
-                            <td>
-                                <span class="icon">🗑</span>
-                                <span class="icon">🛠</span>
-                            </td>
-                        </tr>
+                      
                     </tbody>
                 </table>          
             </div>
@@ -337,16 +158,22 @@
               <form>
                 <div class="from-group-ka">
                   <label>Hình ảnh sản phẩm:</label>
-                  <div class="img-box-ka">Hình ảnh sản phẩm</div>
+                  <div class="img-box-ka" id="product-image-box">
+                    <input type="file" accept="image/*" id="product-image-input" style="display: none;">
+                    <img id="product-image-preview" style="max-width: 100%; display: none;" />
+                    <span class="img-text">Hình ảnh sản phẩm</span>
+                  </div>
                 </div>
+                
                 <div class="from-group-ka">
                   <label>Ảnh bìa:</label>
-                  <div class="img-box-ka">Ảnh bìa</div>
+                  <div class="img-box-ka" id="cover-image-box">
+                    <input type="file" accept="image/*" id="cover-image-input" style="display: none;">
+                    <img id="cover-image-preview" style="max-width: 100%; display: none;" />
+                    <span class="img-text">Ảnh bìa</span>
+                  </div>
                 </div>
-                <div class="from-group-ka">
-                  <label>Video sản phẩm:</label>
-                  <div class="img-box-ka">Video</div>
-                </div>
+                
                 <div class="from-group-ka">
                   <label>Tên sản phẩm:</label>
                   <input type="text">
@@ -397,6 +224,89 @@
             </section>
           </div>
         </div>
+
+        <!-- khu vực sửa sản phẩm -->
+        <div class="Container-sua hidden">
+          <h2>Chi tiết sản phẩm</h2>
+          <hr>
+        
+          <div class="sua-group">
+            <label>Mã sản phẩm:</label>
+            <input type="text" value="SP001" readonly>
+          </div>
+        
+          <div class="sua-group">
+            <label>Tên sản phẩm:</label>
+            <input type="text" value="Điện thoại XYZ">
+          </div>
+        
+          <div class="sua-group">
+            <label>Tổng số lượng kho:</label>
+            <input type="text" value="100">
+          </div>
+        
+          <div class="sua-group">
+            <label>Thương hiệu:</label>
+            <input type="text" value="No brand">
+          </div>
+          <hr>
+          <div class="sua-group">
+            <label>Xuất xứ:</label>
+            <span>Việt Nam</span>
+          </div>
+        
+          <div class="sua-group">
+            <label>Mô tả sản phẩm:</label>
+            <textarea disabled>Đây là sản phẩm test mô tả...</textarea>
+          </div>
+        
+          <div class="buttons-ka">
+            <button class="sua-submit">Quay lại</button> 
+          </div>
+        </div>
+        
+        
+        <!-- khu vực chi tiết sản phẩm -->
+        <div class="Container-Chitiet hidden">
+          <h2>Sửa sản phẩm</h2>
+          <hr>
+        
+          <div class="from-group-ka">
+            <label>Mã sản phẩm:</label>
+            <input type="text" value="SP001" readonly>
+          </div>
+        
+          <div class="from-group-ka">
+            <label>Tên sản phẩm:</label>
+            <input type="text" value="Điện thoại XYZ">
+          </div>
+        
+          <div class="from-group-ka">
+            <label>Tổng số lượng kho:</label>
+            <input type="text" value="100">
+          </div>
+        
+          <div class="from-group-ka">
+            <label>Thương hiệu:</label>
+            <input type="text" value="No brand">
+          </div>
+          <hr>      
+          <div class="from-group-ka">
+            <label>Xuất xứ:</label>
+            <span>Việt Nam</span>
+          </div>
+        
+          <div class="from-group-ka">
+            <label>Mô tả sản phẩm:</label>
+            <textarea disabled>Đây là sản phẩm test mô tả...</textarea>
+          </div>
+        
+          <div class="buttons-ka">
+            <button class="Submit">Sửa</button>
+          </div>
+        </div>
+
+        
 
     <script src="KenhNguoiBan.js"></script>
 </body>
