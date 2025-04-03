@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     // Lấy các phần nội dung cần hiển thị
     const productsSection = document.getElementById("products");
     const ordersSection = document.getElementById("orders");
@@ -30,15 +30,15 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Gán sự kiện click cho các menu
-    allProductsBtn.addEventListener("click", function() {
+    allProductsBtn.addEventListener("click", function () {
         showSection(productsSection, allProductsBtn);
     });
 
-    allOrdersBtn.addEventListener("click", function() {
+    allOrdersBtn.addEventListener("click", function () {
         showSection(ordersSection, allOrdersBtn);
     });
 
-    addProductBtn.addEventListener("click", function() {
+    addProductBtn.addEventListener("click", function () {
         showSection(addProductSection, addProductBtn);
     });
 
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
             this.classList.add("active");
 
             const filter = this.textContent.trim();
-            
+
             rows.forEach(row => {
                 const status = row.children[2].textContent.trim(); // Lấy trạng thái đơn hàng
                 if (filter === "Tất cả" || status === filter) {
@@ -72,9 +72,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.querySelectorAll('.icon').forEach(icon => {
     icon.addEventListener('click', function () {
-      alert('Chức năng này sẽ được thêm sau!');
+        alert('Chức năng này sẽ được thêm sau!');
     });
-  });
+});
 // Thay vì cái lặp lại như .tables .tables
 const orderTabs = document.querySelectorAll(".order-tab");
-  
