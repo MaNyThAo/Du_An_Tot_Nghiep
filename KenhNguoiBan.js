@@ -1,79 +1,86 @@
+
+// JavaScript hoàn chỉnh cho Kênh người bán - chuyển tab theo yêu cầu
+
+// Đợi DOM tải xong
 document.addEventListener("DOMContentLoaded", function () {
-    // Lấy các phần nội dung cần hiển thị
-    const productsSection = document.getElementById("products");
-    const ordersSection = document.getElementById("orders");
-    const addProductSection = document.querySelector(".Container-ka");
+    // Map liên kết giữa id của nút và class/id của khu vực hiển thị tương ứng
+    const navLinks = {
+        "link-all-orders": "order-section",
+        "link-orders": "order-section",
+        "link-all-products": "product-section",
+        "link-products": "product-section",
+        "link-add-product": "product-section",
+        "link-all-vin": "overview-box",
+        "link-vin": "overview-box",
+        "link-add-vin": "wallet-container"
+    };
 
-    // Lấy các nút trong menu
-    const allProductsBtn = document.getElementById("all-products-btn");
-    const allOrdersBtn = document.getElementById("all-orders-btn");
-    const addProductBtn = document.getElementById("add-product-btn");
-
-    // Mảng chứa tất cả các nút để dễ dàng quản lý
-    const menuButtons = [allProductsBtn, allOrdersBtn, addProductBtn];
-
-    // Hàm hiển thị phần tương ứng và ẩn các phần khác
-    function showSection(section, activeButton) {
-        // Ẩn tất cả các phần
-        productsSection.style.display = "none";
-        ordersSection.style.display = "none";
-        addProductSection.style.display = "none";
-
-        // Hiển thị phần được chọn
-        section.style.display = "block";
-
-        // Xóa lớp 'active' khỏi tất cả các nút menu
-        menuButtons.forEach(btn => btn.classList.remove("active"));
-
-        // Thêm lớp 'active' vào nút đang được chọn
-        activeButton.classList.add("active");
+    // Hàm ẩn toàn bộ khu vực dữ liệu
+    function hideAllSections() {
+        const allSections = document.querySelectorAll(
+            "#order-section, #product-section, .Container-ka, .Container-sua, .Container-Chitiet, .overview-box, .wallet-container"
+        );
+        allSections.forEach((el) => el.classList.add("hidden"));
     }
 
-    // Gán sự kiện click cho các menu
-    allProductsBtn.addEventListener("click", function () {
-        showSection(productsSection, allProductsBtn);
-    });
+    // Hàm hiển thị đúng khu vực cần thiết
+    function showSection(id) {
+        hideAllSections();
+        const section = document.getElementById(id) || document.querySelector(`.${id}`);
+        if (section) section.classList.remove("hidden");
+    }
 
-    allOrdersBtn.addEventListener("click", function () {
-        showSection(ordersSection, allOrdersBtn);
-    });
-
-    addProductBtn.addEventListener("click", function () {
-        showSection(addProductSection, addProductBtn);
-    });
-
-    // Mặc định hiển thị danh sách sản phẩm khi tải trang
-    showSection(productsSection, allProductsBtn);
-});
-document.addEventListener("DOMContentLoaded", function () {
-    // Lấy tất cả các tab trạng thái đơn hàng
-    const orderTabs = document.querySelectorAll(".tables .tables");
-    const rows = document.querySelectorAll("#orders tbody tr");
-
-    orderTabs.forEach(tab => {
-        tab.addEventListener("click", function () {
-            // Loại bỏ lớp active khỏi tất cả các tab
-            orderTabs.forEach(t => t.classList.remove("active"));
-            this.classList.add("active");
-
-            const filter = this.textContent.trim();
-
-            rows.forEach(row => {
-                const status = row.children[2].textContent.trim(); // Lấy trạng thái đơn hàng
-                if (filter === "Tất cả" || status === filter) {
-                    row.style.display = "";
-                } else {
-                    row.style.display = "none";
-                }
+    // Gán sự kiện click cho các liên kết sidebar
+    Object.keys(navLinks).forEach((linkId) => {
+        const button = document.getElementById(linkId);
+        if (button) {
+            button.addEventListener("click", (e) => {
+                e.preventDefault();
+                showSection(navLinks[linkId]);
             });
+        }
+    });
+
+    // Nút quay lại từ chi tiết sản phẩm về tất cả sản phẩm
+    const btnQuayLaiChiTiet = document.querySelector(".Container-Chitiet .Submit");
+    if (btnQuayLaiChiTiet) {
+        btnQuayLaiChiTiet.addEventListener("click", () => {
+            showSection("product-section");
+        });
+    }
+
+    // Nút quay lại từ sửa sản phẩm về tất cả sản phẩm
+    const btnQuayLaiSua = document.querySelector(".sua-submit");
+    if (btnQuayLaiSua) {
+        btnQuayLaiSua.addEventListener("click", () => {
+            showSection("product-section");
+        });
+    }
+
+    // Nút hủy thêm sản phẩm quay lại tất cả sản phẩm
+    const btnCancelAdd = document.querySelector(".Cancel");
+    if (btnCancelAdd) {
+        btnCancelAdd.addEventListener("click", () => {
+            showSection("product-section");
+        });
+    }
+
+    // Nút chỉnh sửa sản phẩm (icon 🛠)
+    document.querySelectorAll(".btn-edit-product").forEach((btn) => {
+        btn.addEventListener("click", () => {
+            hideAllSections();
+            document.querySelector(".Container-sua").classList.remove("hidden");
         });
     });
+
+    // Nút xem chi tiết đơn hàng
+    document.querySelectorAll(".btn-view-order-detail").forEach((btn) => {
+        btn.addEventListener("click", () => {
+            alert("Hiển thị chi tiết đơn hàng - bạn có thể thay bằng giao diện popup hoặc section mới");
+        });
+    });
+
+    // Hiển thị mặc định là tất cả đơn hàng
+    showSection("order-section");
 });
 
-document.querySelectorAll('.icon').forEach(icon => {
-    icon.addEventListener('click', function () {
-        alert('Chức năng này sẽ được thêm sau!');
-    });
-});
-// Thay vì cái lặp lại như .tables .tables
-const orderTabs = document.querySelectorAll(".order-tab");
