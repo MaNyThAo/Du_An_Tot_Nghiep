@@ -63,10 +63,10 @@ body {
 }
 .container-sidebar a {
     text-decoration: none;
-    color: slategray;
     font-size: 16px;
     display: block;
     transition: 0.2s ease;
+    font-size: 22px;
 }
 .container-sidebar a:hover {
     color: #007bff;
@@ -146,7 +146,7 @@ body {
 }
 
 /* SECTION SẢN PHẨM */
-#product-section {
+product-section {
     padding: 30px;
 }
 .product-tabs {
@@ -270,9 +270,25 @@ body {
 .Submit:hover, .sua-submit:hover {
     background-color: #0056b3;
 }
-.hidden {
-    display: none;
+.container-sidebar a {
+  color: slategray;
+  text-decoration: none;
+  transition: color 0.3s;
 }
+
+.container-sidebar a.active-link {
+  color: blue !important;
+  font-weight: bold;
+}
+
+/* Cố định màu đen cho các mục cha */
+.container-sidebar a.static-black {
+  color: black !important;
+  font-weight: bold;
+  cursor: default;
+}
+
+
 
 /* ========== DOANH THU - GIAO DIỆN ========== */
 #statistic-section {
@@ -619,5 +635,39 @@ body {
   .wallet-table th {
     background-color: #f9f9f9;
     font-weight: bold;
+  }
+  .hidden {
+    display: none !important;
+  }
+  
+  .img-box-ka {
+    width: 200px;
+    height: 200px;
+    border: 2px dashed #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s;
+  }
+  
+  .img-box-ka:hover {
+    border-color: #0447b5bf;
+  }
+  
+  .img-box-ka img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .img-text {
+    font-size: 14px;
+    color: #666;
+    text-align: center;
   }
   
