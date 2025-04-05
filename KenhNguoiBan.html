@@ -10,7 +10,7 @@
       <body>
               <div class="header">
               <div class="header-vin">
-                  <img src="img/logo.jpg" alt="Logo" width="80px">
+                  <img src="img/logo-removebg-preview.png" alt="Logo" width="100px">
                   <h2>Kênh người bán</h2>
                   <div class="header-ben">
                       <img src="img/brn.jpg" alt="img user name" width="100px">
@@ -23,14 +23,14 @@
             <!-- Sidebar bên trái -->
             <div class="container-sidebar">
               <ul>
-                <li><a href="#" id="link-orders">Quản lý đơn hàng</a></li>
-                <li><a href="#" id="link-all-orders">Tất cả đơn hàng</a></li>
-                <li><a href="#" id="link-products">Quản lý sản phẩm</a></li>
-                <li><a href="#" id="link-all-products">Tất cả sản phẩm</a></li>
-                <li><a href="#" id="link-add-product">Thêm sản phẩm</a></li>
-                <li><a href="#" id="link-vin">Thống kê</a></li>
-                <li><a href="#" id="link-all-vin">Doanh thu</a></li>
-                <li><a href="#" id="link-add-vin">Ví</a></li>
+                <li style="color: black;"><a href="#" id="link-orders">Quản lý đơn hàng</a></li>
+                <li style="color: slategray;"><a href="#" id="link-all-orders">Tất cả đơn hàng</a></li>
+                <li style="color: black;"><a href="#" id="link-products">Quản lý sản phẩm</a></li>
+                <li style="color: slategray;"><a href="#" id="link-all-products">Tất cả sản phẩm</a></li>
+                <li style="color: slategray;"><a href="#" id="link-add-product">Thêm sản phẩm</a></li>
+                <li style="color: black;"><a href="#" id="link-vin">Thống kê</a></li>
+                <li style="color: slategray;"><a href="#" id="link-all-vin">Doanh thu</a></li>
+                <li style="color: slategray;"><a href="#" id="link-add-vin">Ví</a></li>
               </ul>
             </div>
           
@@ -79,15 +79,15 @@
                     </tbody>
                   </table>
                 </div>
-            <!-- PHẦN SẢN PHẨM -->
-            <div id="product-section" class="hidden">
-            <div class="section">
-              <div class="product-tabs">
-                <div class="tab active">Tất cả sản phẩm</div>
-                <div class="tab">Hoạt động</div>
-                <div class="tab">Ăn gậy</div>
-                <button class="btn-add-product">Thêm mới</button>
-              </div>
+              <!-- PHẦN SẢN PHẨM -->
+              <div id="product-section" class="hidden">
+              <div class="section">
+                <div class="product-tabs">
+                  <div class="tab active">Tất cả sản phẩm</div>
+                  <div class="tab">Hoạt động</div>
+                  <div class="tab">Ăn gậy</div>
+                  <button class="btn-add-product">Thêm mới</button>
+                </div>
 
               <div class="search-bar">
                 <input type="text" class="input-search" placeholder="Tìm kiếm sản phẩm...">
@@ -132,381 +132,381 @@
                   </tr>
                 </tbody>
               </table>
-            </div>
-          </div>
-          <!-- Phần thêm sản phẩm -->
-          <div class="Container-ka product-form-ka"> <!-- Thêm class để áp dụng đúng CSS -->
-            <div class="Content-ka">
-              <section class="product-form-ka">
-                <h2>Thông tin cơ bản</h2>
-                <form>
-                  <div class="from-group-ka">
-                    <label>Hình ảnh sản phẩm:</label>
-                    <div class="img-box-ka" id="product-image-box">
-                      <input type="file" accept="image/*" id="product-image-input" style="display: none;">
-                      <img id="product-image-preview" style="max-width: 100%; display: none;" />
-                      <span class="img-text">Hình ảnh sản phẩm</span>
+                </div>
+              </div>
+              <!-- Phần thêm sản phẩm -->
+              <div class="Container-ka product-form-ka hidden">
+                <!-- Thêm class để áp dụng đúng CSS -->
+                <div class="Content-ka">
+                  <section class="product-form-ka">
+                    <h2>Thông tin cơ bản</h2>
+                    <form>
+                      <div class="from-group-ka">
+                        <label>Hình ảnh sản phẩm:</label>
+                        <div class="img-box-ka" id="product-image-box">
+                          <input type="file" accept="image/*" id="product-image-input" style="display: none;">
+                          <img id="product-image-preview" style="max-width: 100%; display: none;" />
+                          <span class="img-text">Hình ảnh sản phẩm</span>
+                        </div>
+                      </div>
+                      
+                      <div class="from-group-ka">
+                        <label>Ảnh bìa:</label>
+                        <div class="img-box-ka" id="cover-image-box">
+                          <input type="file" accept="image/*" id="cover-image-input" style="display: none;">
+                          <img id="cover-image-preview" style="max-width: 100%; display: none;" />
+                          <span class="img-text">Ảnh bìa</span>
+                        </div>
+                      </div>
+                      
+                      <div class="from-group-ka">
+                        <label>Tên sản phẩm:</label>
+                        <input type="text">
+                      </div>
+                      <div class="from-group-ka">
+                        <label>Danh mục:</label>
+                        <input type="text">
+                      </div>
+                      <div class="from-group-ka">
+                        <label>Mô tả sản phẩm:</label>
+                        <textarea class="textareas"></textarea>
+                      </div>
+                    </form>
+
+                    <h2>Thông tin chi tiết</h2>
+                    <form>
+                      <div class="from-group-ka">
+                        <label>Thương hiệu:</label>
+                        <input type="text" value="No brand"> 
+                      </div>
+                      <div class="from-group-ka">
+                        <label>Xuất xứ:</label>
+                        <input type="text" value="Việt Nam"> 
+                      </div>
+                    </form>
+
+                    <h2>Thông tin bán hàng</h2>
+                    <form>
+                      <div class="from-group-ka">
+                        <label>Giá:</label> <!-- Sửa lỗi dư chữ "Giá" -->
+                        <input type="text"> 
+                      </div>
+                      <div class="from-group-ka">
+                        <label>Kho hàng:</label>
+                        <input type="text"> 
+                      </div>
+                    </form>
+
+                    <!-- Căn chỉnh đúng nút Hủy và Thêm sản phẩm -->
+                    <div class="buttons-ka">
+                      <button class="Cancel">Hủy</button>
+                      <button class="Submit">Thêm sản phẩm</button>
                     </div>
-                  </div>
-                  
-                  <div class="from-group-ka">
-                    <label>Ảnh bìa:</label>
-                    <div class="img-box-ka" id="cover-image-box">
-                      <input type="file" accept="image/*" id="cover-image-input" style="display: none;">
-                      <img id="cover-image-preview" style="max-width: 100%; display: none;" />
-                      <span class="img-text">Ảnh bìa</span>
-                    </div>
-                  </div>
-                  
-                  <div class="from-group-ka">
-                    <label>Tên sản phẩm:</label>
-                    <input type="text">
-                  </div>
-                  <div class="from-group-ka">
-                    <label>Danh mục:</label>
-                    <input type="text">
-                  </div>
-                  <div class="from-group-ka">
-                    <label>Mô tả sản phẩm:</label>
-                    <textarea class="textareas"></textarea>
-                  </div>
-                </form>
-
-                <h2>Thông tin chi tiết</h2>
-                <form>
-                  <div class="from-group-ka">
-                    <label>Thương hiệu:</label>
-                    <input type="text" value="No brand"> 
-                  </div>
-                  <div class="from-group-ka">
-                    <label>Xuất xứ:</label>
-                    <input type="text" value="Việt Nam"> 
-                  </div>
-                </form>
-
-                <h2>Thông tin bán hàng</h2>
-                <form>
-                  <div class="from-group-ka">
-                    <label>Giá:</label> <!-- Sửa lỗi dư chữ "Giá" -->
-                    <input type="text"> 
-                  </div>
-                  <div class="from-group-ka">
-                    <label>Kho hàng:</label>
-                    <input type="text"> 
-                  </div>
-                </form>
-
-                <!-- Căn chỉnh đúng nút Hủy và Thêm sản phẩm -->
+                  </section>
+                </div>
+              </div>
+              <!-- khu vực sửa sản phẩm -->
+              <div class="Container-sua hidden">
+                <h2>Sửa sản phẩm</h2>
+                <hr>
+              
+                <div class="sua-group">
+                  <label>Mã sản phẩm:</label>
+                  <input type="text" value="SP001" readonly>
+                </div>
+              
+                <div class="sua-group">
+                  <label>Tên sản phẩm:</label>
+                  <input type="text" value="Điện thoại XYZ">
+                </div>
+              
+                <div class="sua-group">
+                  <label>Tổng số lượng kho:</label>
+                  <input type="text" value="100">
+                </div>
+              
+                <div class="sua-group">
+                  <label>Thương hiệu:</label>
+                  <input type="text" value="No brand">
+                </div>
+                <hr>
+                <div class="sua-group">
+                  <label>Xuất xứ:</label>
+                  <span>Việt Nam</span>
+                </div>
+              
+                <div class="sua-group">
+                  <label>Mô tả sản phẩm:</label>
+                  <textarea disabled>Đây là sản phẩm test mô tả...</textarea>
+                </div>
+              
                 <div class="buttons-ka">
-                  <button class="Cancel">Hủy</button>
-                  <button class="Submit">Thêm sản phẩm</button>
-                </div>
-              </section>
-            </div>
-          </div>
-          <!-- khu vực sửa sản phẩm -->
-          <div class="Container-sua hidden">
-            <h2>Sửa sản phẩm</h2>
-            <hr>
-          
-            <div class="sua-group">
-              <label>Mã sản phẩm:</label>
-              <input type="text" value="SP001" readonly>
-            </div>
-          
-            <div class="sua-group">
-              <label>Tên sản phẩm:</label>
-              <input type="text" value="Điện thoại XYZ">
-            </div>
-          
-            <div class="sua-group">
-              <label>Tổng số lượng kho:</label>
-              <input type="text" value="100">
-            </div>
-          
-            <div class="sua-group">
-              <label>Thương hiệu:</label>
-              <input type="text" value="No brand">
-            </div>
-            <hr>
-            <div class="sua-group">
-              <label>Xuất xứ:</label>
-              <span>Việt Nam</span>
-            </div>
-          
-            <div class="sua-group">
-              <label>Mô tả sản phẩm:</label>
-              <textarea disabled>Đây là sản phẩm test mô tả...</textarea>
-            </div>
-          
-            <div class="buttons-ka">
-              <button class="sua-submit">Sửa</button> 
-            </div>
-          </div>
-          <!-- khu vực chi tiết sản phẩm -->
-          <div class="Container-Chitiet hidden">
-            <h2>Chi tiết sản phẩm</h2>
-            <hr>
-          
-            <div class="from-group-ka">
-              <label>Mã sản phẩm:</label>
-              <input type="text" value="SP001" readonly>
-            </div>
-          
-            <div class="from-group-ka">
-              <label>Tên sản phẩm:</label>
-              <input type="text" value="Điện thoại XYZ">
-            </div>
-          
-            <div class="from-group-ka">
-              <label>Tổng số lượng kho:</label>
-              <input type="text" value="100">
-            </div>
-          
-            <div class="from-group-ka">
-              <label>Thương hiệu:</label>
-              <input type="text" value="No brand">
-            </div>
-            <hr>      
-            <div class="from-group-ka">
-              <label>Xuất xứ:</label>
-              <span>Việt Nam</span>
-            </div>
-          
-            <div class="from-group-ka">
-              <label>Mô tả sản phẩm:</label>
-              <textarea disabled>Đây là sản phẩm test mô tả...</textarea>
-            </div>
-          
-            <div class="buttons-ka">
-              <button class="Submit">Quay lại</button>
-            </div>
-          </div>
-          <div class="doanhthu-section section hidden">
-
-            <!-- Tổng quan doanh thu -->
-            <div class="overview-box hidden">
-              <div class="overview-item">
-                <h4>Chưa thanh toán tổng cộng</h4>
-                <p>0đ</p>
-              </div>
-              <div class="overview-item">
-                <h4>Đã thanh toán tuần này</h4>
-                <p>0đ</p>
-              </div>
-              <div class="overview-item">
-                <h4>Tháng này</h4>
-                <p>0đ</p>
-              </div>
-              <div class="overview-item">
-                <h4>Tổng cộng</h4>
-                <p>0đ</p>
-              </div>
-            </div>
-          
-            <!-- Chi tiết doanh thu -->
-            <div class="statistic-detail">
-              <div class="statistic-header">
-                <div class="tab active">Chưa thanh toán</div>
-                <div class="tab">Đã thanh toán</div>
-                <input type="text" class="search-input" placeholder="Tìm kiếm đơn hàng">
-              </div>
-          
-              <div class="statistic-table-container">
-                <table class="statistic-table">
-                  <thead>
-                    <tr>
-                      <th>Đơn hàng</th>
-                      <th>Trạng thái</th>
-                      <th>Phương thức thanh toán</th>
-                      <th>Số tiền chưa thanh toán</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <div class="order-info">
-                          <img src="img/image-placeholder.jpg" alt="Ảnh đơn hàng" class="order-img">
-                          <div>
-                            <div>Mã sản phẩm <button class="btn-copy">Copy</button></div>
-                            <div>Tên người mua</div>
-                          </div>
-                        </div>
-                      </td>
-                      <td>Đơn chưa hoàn thành</td>
-                      <td>Thanh toán khi nhận hàng</td>
-                      <td>₫99.000</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="order-info">
-                          <img src="img/image-placeholder.jpg" alt="Ảnh đơn hàng" class="order-img">
-                          <div>
-                            <div>Mã sản phẩm <button class="btn-copy">Copy</button></div>
-                            <div>Tên người mua</div>
-                          </div>
-                        </div>
-                      </td>
-                      <td>Đơn chưa hoàn thành</td>
-                      <td>Thanh toán qua ví</td>
-                      <td>₫40.000</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="order-info">
-                          <img src="img/image-placeholder.jpg" alt="Ảnh đơn hàng" class="order-img">
-                          <div>
-                            <div>Mã sản phẩm <button class="btn-copy">Copy</button></div>
-                            <div>Tên người mua</div>
-                          </div>
-                        </div>
-                      </td>
-                      <td>Đơn chưa hoàn thành</td>
-                      <td>Trả sau</td>
-                      <td>₫1.411.000</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-            <!-- CONTAINER ĐÃ THANH TOÁN -->
-            <div class="statistic-paid-container">
-              <h3>Chi tiết</h3>
-
-              <div class="statistic-tabs">
-                <div class="tab">Chưa thanh toán</div>
-                <div class="tab active">Đã thanh toán</div>
-                <button class="btn-export">Xuất</button>
-              </div>
-
-              <div class="statistic-table-wrapper">
-                <table class="statistic-table">
-                  <thead>
-                    <tr>
-                      <th>Đơn hàng</th>
-                      <th>Ngày thanh toán</th>
-                      <th>Trạng thái</th>
-                      <th>PTTT</th>
-                      <th>Số tiền chưa thanh toán</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <div class="order-info">
-                          <img src="img/placeholder.png" alt="Hình đơn hàng" />
-                          <div>
-                            <div class="order-code">Mã đơn hàng</div>
-                            <div class="order-user">Tên người mua</div>
-                          </div>
-                        </div>
-                      </td>
-                      <td>1/1/2023</td>
-                      <td>Thành công</td>
-                      <td>Chuyển khoản</td>
-                      <td>₫99.000</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="order-info">
-                          <img src="img/placeholder.png" alt="Hình đơn hàng" />
-                          <div>
-                            <div class="order-code">Mã đơn hàng</div>
-                            <div class="order-user">Tên người mua</div>
-                          </div>
-                        </div>
-                      </td>
-                      <td>17/5/2025</td>
-                      <td>Thành công</td>
-                      <td>Tiền mặt</td>
-                      <td>₫40.000</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="order-info">
-                          <img src="img/placeholder.png" alt="Hình đơn hàng" />
-                          <div>
-                            <div class="order-code">Mã đơn hàng</div>
-                            <div class="order-user">Tên người mua</div>
-                          </div>
-                        </div>
-                      </td>
-                      <td>14/11/2024</td>
-                      <td>Thành công</td>
-                      <td>Ví trả sau</td>
-                      <td>₫1.411.000</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <!-- Bắt đầu phần container ví -->
-          <div class="wallet-container hidden">
-            <!-- Tổng quan số dư -->
-            <div class="wallet-overview">
-              <h3>Tổng quan</h3>
-              <div class="wallet-header">
-                <div class="wallet-balance">
-                  <p>Số dư</p>
-                  <h2>1.000.000.000đ</h2>
-                  <button class="btn-withdraw">Rút tiền</button>
-                </div>
-                <div class="wallet-bank">
-                  <p>Tài khoản ngân hàng</p>
-                  <button class="btn-add-bank">Thêm tài khoản ngân hàng</button>
+                  <button class="sua-submit">Sửa</button> 
                 </div>
               </div>
-            </div>
-
-            <!-- Các giao dịch -->
-            <div class="wallet-transactions">
-              <div class="wallet-transactions-header">
-                <h3>Các giao dịch</h3>
-                <p>Số lượng giao dịch (Tổng số tiền +)</p>
+              <!-- khu vực chi tiết sản phẩm -->
+              <div class="Container-Chitiet hidden">
+                <h2>Chi tiết sản phẩm</h2>
+                <hr>
+              
+                <div class="from-group-ka">
+                  <label>Mã sản phẩm:</label>
+                  <input type="text" value="SP001" readonly>
+                </div>
+              
+                <div class="from-group-ka">
+                  <label>Tên sản phẩm:</label>
+                  <input type="text" value="Điện thoại XYZ">
+                </div>
+              
+                <div class="from-group-ka">
+                  <label>Tổng số lượng kho:</label>
+                  <input type="text" value="100">
+                </div>
+              
+                <div class="from-group-ka">
+                  <label>Thương hiệu:</label>
+                  <input type="text" value="No brand">
+                </div>
+                <hr>      
+                <div class="from-group-ka">
+                  <label>Xuất xứ:</label>
+                  <span>Việt Nam</span>
+                </div>
+              
+                <div class="from-group-ka">
+                  <label>Mô tả sản phẩm:</label>
+                  <textarea disabled>Đây là sản phẩm test mô tả...</textarea>
+                </div>
+              
+                <div class="buttons-ka">
+                  <button class="Submit">Quay lại</button>
+                </div>
               </div>
-
-              <!-- Tabs chuyển trạng thái -->
-              <div class="wallet-tabs">
-                <button class="wallet-tab active" data-tab="tatca">Tất cả</button>
-                <button class="wallet-tab" data-tab="hoanthanh">Hoàn thành</button>
-                <button class="wallet-tab" data-tab="dangxuly">Đang xử lý</button>
+              <!-- Tổng quan doanh thu -->
+              <div class="doanhthu-section section hidden">
+                <div class="overview-box hidden">
+                  <div class="overview-item">
+                    <h4>Chưa thanh toán tổng cộng</h4>
+                    <p>0đ</p>
+                  </div>
+                  <div class="overview-item">
+                    <h4>Đã thanh toán tuần này</h4>
+                    <p>0đ</p>
+                  </div>
+                  <div class="overview-item">
+                    <h4>Tháng này</h4>
+                    <p>0đ</p>
+                  </div>
+                  <div class="overview-item">
+                    <h4>Tổng cộng</h4>
+                    <p>0đ</p>
+                  </div>
+                  
+                </div>
+                <!-- Chi tiết doanh thu -->
+              <div class="statistic-detail">
+                <div class="statistic-header">
+                  <div class="tab active">Chưa thanh toán</div>
+                  <div class="tab">Đã thanh toán</div>
+                  <input type="text" class="search-input" placeholder="Tìm kiếm đơn hàng">
+                </div>
+            
+                <div class="statistic-table-container">
+                  <table class="statistic-table">
+                    <thead>
+                      <tr>
+                        <th>Đơn hàng</th>
+                        <th>Trạng thái</th>
+                        <th>Phương thức thanh toán</th>
+                        <th>Số tiền chưa thanh toán</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <div class="order-info">
+                            <img src="img/image-placeholder.jpg" alt="Ảnh đơn hàng" class="order-img">
+                            <div>
+                              <div>Mã sản phẩm <button class="btn-copy">Copy</button></div>
+                              <div>Tên người mua</div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>Đơn chưa hoàn thành</td>
+                        <td>Thanh toán khi nhận hàng</td>
+                        <td>₫99.000</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="order-info">
+                            <img src="img/image-placeholder.jpg" alt="Ảnh đơn hàng" class="order-img">
+                            <div>
+                              <div>Mã sản phẩm <button class="btn-copy">Copy</button></div>
+                              <div>Tên người mua</div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>Đơn chưa hoàn thành</td>
+                        <td>Thanh toán qua ví</td>
+                        <td>₫40.000</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="order-info">
+                            <img src="img/image-placeholder.jpg" alt="Ảnh đơn hàng" class="order-img">
+                            <div>
+                              <div>Mã sản phẩm <button class="btn-copy">Copy</button></div>
+                              <div>Tên người mua</div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>Đơn chưa hoàn thành</td>
+                        <td>Trả sau</td>
+                        <td>₫1.411.000</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
-
-              <!-- Tìm kiếm -->
-              <div class="wallet-search">
-                <input type="text" placeholder="Tìm kiếm theo mã đơn..." />
               </div>
+              
+                <!-- CONTAINER ĐÃ THANH TOÁN -->
+                <div class="statistic-paid-container hidden">
+                  <h3>Chi tiết</h3>
 
-              <!-- Bảng dữ liệu -->
-              <div class="wallet-table" id="wallet-data">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Ngày</th>
-                      <th>Loại giao dịch</th>
-                      <th>Mã đơn hàng</th>
-                      <th>Số tiền</th>
-                      <th>Trạng thái</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>21/12/2025</td>
-                      <td>#21122007</td>
-                      <td>#21122007</td>
-                      <td>500.000đ</td>
-                      <td>Hoàn thành</td>
-                    </tr>
-                    <!-- Có thể thêm nhiều dòng giao dịch -->
-                  </tbody>
-                </table>
-              </div>
-            </div>
+                  <div class="statistic-tabs">
+                    <div class="tab">Chưa thanh toán</div>
+                    <div class="tab active">Đã thanh toán</div>
+                    <button class="btn-export">Xuất</button>
+                  </div>
+
+                  <div class="statistic-table-wrapper">
+                    <table class="statistic-table">
+                      <thead>
+                        <tr>
+                          <th>Đơn hàng</th>
+                          <th>Ngày thanh toán</th>
+                          <th>Trạng thái</th>
+                          <th>PTTT</th>
+                          <th>Số tiền chưa thanh toán</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div class="order-info">
+                              <img src="img/placeholder.png" alt="Hình đơn hàng" />
+                              <div>
+                                <div class="order-code">Mã đơn hàng</div>
+                                <div class="order-user">Tên người mua</div>
+                              </div>
+                            </div>
+                          </td>
+                          <td>1/1/2023</td>
+                          <td>Thành công</td>
+                          <td>Chuyển khoản</td>
+                          <td>₫99.000</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="order-info">
+                              <img src="img/placeholder.png" alt="Hình đơn hàng" />
+                              <div>
+                                <div class="order-code">Mã đơn hàng</div>
+                                <div class="order-user">Tên người mua</div>
+                              </div>
+                            </div>
+                          </td>
+                          <td>17/5/2025</td>
+                          <td>Thành công</td>
+                          <td>Tiền mặt</td>
+                          <td>₫40.000</td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="order-info">
+                              <img src="img/placeholder.png" alt="Hình đơn hàng" />
+                              <div>
+                                <div class="order-code">Mã đơn hàng</div>
+                                <div class="order-user">Tên người mua</div>
+                              </div>
+                            </div>
+                          </td>
+                          <td>14/11/2024</td>
+                          <td>Thành công</td>
+                          <td>Ví trả sau</td>
+                          <td>₫1.411.000</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+                <!-- Bắt đầu phần container ví -->
+              <div class="wallet-container hidden">
+                <!-- Tổng quan số dư -->
+                <div class="wallet-overview">
+                  <h3>Tổng quan</h3>
+                  <div class="wallet-header">
+                    <div class="wallet-balance">
+                      <p>Số dư</p>
+                      <h2>1.000.000.000đ</h2>
+                      <button class="btn-withdraw">Rút tiền</button>
+                    </div>
+                    <div class="wallet-bank">
+                      <p>Tài khoản ngân hàng</p>
+                      <button class="btn-add-bank">Thêm tài khoản ngân hàng</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Các giao dịch -->
+                <div class="wallet-transactions">
+                  <div class="wallet-transactions-header">
+                    <h3>Các giao dịch</h3>
+                    <p>Số lượng giao dịch (Tổng số tiền +)</p>
+                  </div>
+
+                  <!-- Tabs chuyển trạng thái -->
+                  <div class="wallet-tabs">
+                    <button class="wallet-tab active" data-tab="tatca">Tất cả</button>
+                    <button class="wallet-tab" data-tab="hoanthanh">Hoàn thành</button>
+                    <button class="wallet-tab" data-tab="dangxuly">Đang xử lý</button>
+                  </div>
+
+                  <!-- Tìm kiếm -->
+                  <div class="wallet-search">
+                    <input type="text" placeholder="Tìm kiếm theo mã đơn..." />
+                  </div>
+
+                  <!-- Bảng dữ liệu -->
+                  <div class="wallet-table" id="wallet-data">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Ngày</th>
+                          <th>Loại giao dịch</th>
+                          <th>Mã đơn hàng</th>
+                          <th>Số tiền</th>
+                          <th>Trạng thái</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>21/12/2025</td>
+                          <td>#21122007</td>
+                          <td>#21122007</td>
+                          <td>500.000đ</td>
+                          <td>Hoàn thành</td>
+                        </tr>
+                        <!-- Có thể thêm nhiều dòng giao dịch -->
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
           </div>
-
-        </div>
-      </div>                  
+          </div>
+          </div>              
           <script src="KenhNguoiBan.js"></script>
       </body>
       </html>
