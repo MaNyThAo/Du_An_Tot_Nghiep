@@ -269,9 +269,25 @@ product-section {
 .Submit:hover, .sua-submit:hover {
     background-color: #0056b3;
 }
-.hidden {
-    display: none;
+.container-sidebar a {
+  color: slategray;
+  text-decoration: none;
+  transition: color 0.3s;
 }
+
+.container-sidebar a.active-link {
+  color: blue !important;
+  font-weight: bold;
+}
+
+/* Cố định màu đen cho các mục cha */
+.container-sidebar a.static-black {
+  color: black !important;
+  font-weight: bold;
+  cursor: default;
+}
+
+
 
 /* ========== DOANH THU - GIAO DIỆN ========== */
 #statistic-section {
