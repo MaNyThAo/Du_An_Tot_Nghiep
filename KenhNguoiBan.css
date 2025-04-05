@@ -66,6 +66,7 @@ body {
     font-size: 16px;
     display: block;
     transition: 0.2s ease;
+    font-size: 22px;
 }
 .container-sidebar a:hover {
     color: #007bff;
@@ -286,7 +287,7 @@ product-section {
   font-weight: bold;
   cursor: default;
 }
-  
+
 
 
 /* ========== DOANH THU - GIAO DIỆN ========== */

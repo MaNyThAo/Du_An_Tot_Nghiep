@@ -323,51 +323,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-document.addEventListener("DOMContentLoaded", function () {
-  // Ảnh sản phẩm
-  const productImageBox = document.getElementById("product-image-box");
-  const productImageInput = document.getElementById("product-image-input");
-  const productImagePreview = document.getElementById("product-image-preview");
 
-  productImageBox.addEventListener("click", function () {
-    productImageInput.click();
-  });
-
-  productImageInput.addEventListener("change", function () {
-    const file = this.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        productImagePreview.src = e.target.result;
-        productImagePreview.style.display = "block";
-        productImageBox.querySelector(".img-text").style.display = "none";
-      };
-      reader.readAsDataURL(file);
-    }
-  });
-
-  // Ảnh bìa
-  const coverImageBox = document.getElementById("cover-image-box");
-  const coverImageInput = document.getElementById("cover-image-input");
-  const coverImagePreview = document.getElementById("cover-image-preview");
-
-  coverImageBox.addEventListener("click", function () {
-    coverImageInput.click();
-  });
-
-  coverImageInput.addEventListener("change", function () {
-    const file = this.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        coverImagePreview.src = e.target.result;
-        coverImagePreview.style.display = "block";
-        coverImageBox.querySelector(".img-text").style.display = "none";
-      };
-      reader.readAsDataURL(file);
-    }
-  });
-});
 document.addEventListener("DOMContentLoaded", function () {
   const tabs = document.querySelectorAll(".statistic-header .tab");
   const rows = document.querySelectorAll(".statistic-table tbody tr");
@@ -487,8 +443,74 @@ document.addEventListener("DOMContentLoaded", function () {
   updateUnpaidAndPaid();
 });
 
-// thanh toán tháng này chưa làm ??? 
-
-
 
 //thanh toán tổng 
+function parseCurrency(text) {
+  return parseInt(text.replace(/[₫.,]/g, '').replace(/\s/g, '')) || 0;
+}
+
+function formatCurrency(num) {
+  return num.toLocaleString('vi-VN') + "₫";
+}
+
+function updateTotalAllAmount() {
+  const cells = document.querySelectorAll(".amount-cell");
+  let total = 0;
+
+  cells.forEach(cell => {
+    total += parseCurrency(cell.textContent);
+  });
+
+  const totalElement = document.getElementById("total-all-amount");
+  if (totalElement) {
+    totalElement.textContent = formatCurrency(total);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", updateTotalAllAmount);
+// hình ảnh của phần thêm sản phẩm 
+document.addEventListener("DOMContentLoaded", function () {
+  // Ảnh sản phẩm
+  const productImageBox = document.getElementById("product-image-box");
+  const productImageInput = document.getElementById("product-image-input");
+  const productImagePreview = document.getElementById("product-image-preview");
+
+  productImageBox.addEventListener("click", function () {
+    productImageInput.click();
+  });
+
+  productImageInput.addEventListener("change", function () {
+    const file = this.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        productImagePreview.src = e.target.result;
+        productImagePreview.style.display = "block";
+        productImageBox.querySelector(".img-text").style.display = "none";
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+
+  // Ảnh bìa
+  const coverImageBox = document.getElementById("cover-image-box");
+  const coverImageInput = document.getElementById("cover-image-input");
+  const coverImagePreview = document.getElementById("cover-image-preview");
+
+  coverImageBox.addEventListener("click", function () {
+    coverImageInput.click();
+  });
+
+  coverImageInput.addEventListener("change", function () {
+    const file = this.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        coverImagePreview.src = e.target.result;
+        coverImagePreview.style.display = "block";
+        coverImageBox.querySelector(".img-text").style.display = "none";
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+});
