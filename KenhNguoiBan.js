@@ -77,15 +77,6 @@ slategrayLinkIds.forEach(id => {
     });
   }
 });
-const detailButtons = document.querySelectorAll(".btn-view-order-detail");
-const detailContainer = document.querySelector(".Container-Chitiet");
-
-detailButtons.forEach(button => {
-  button.addEventListener("click", () => {
-    detailContainer.classList.remove("hidden");
-    window.scrollTo({ top: detailContainer.offsetTop - 100, behavior: "smooth" });
-  });
-});
 document.addEventListener("DOMContentLoaded", function () {
   const tabs = document.querySelectorAll(".order-tabs .tab");
   const rows = document.querySelectorAll("#order-list tr");
@@ -110,19 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-document.addEventListener("DOMContentLoaded", function () {
-  const backButton = document.querySelector(".Container-Chitiet .Submit");
-  const chitietContainer = document.querySelector(".Container-Chitiet");
-  const orderSection = document.getElementById("order-section"); // phần chính cần hiện lại
 
-  if (backButton) {
-    backButton.addEventListener("click", () => {
-      chitietContainer.classList.add("hidden");
-      orderSection.classList.remove("hidden"); // Hiện lại phần đơn hàng
-      window.scrollTo({ top: orderSection.offsetTop - 100, behavior: "smooth" });
-    });
-  }
-});
 // lọc của phần tất cả sản phẩm 
 document.addEventListener("DOMContentLoaded", function () {
   const productTabs = document.querySelectorAll(".product-tabs .tab");
@@ -183,62 +162,62 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const btnSubmit = document.querySelector(".Submit");
-  const productSection = document.getElementById("product-section");
-  const formAddProduct = document.querySelector(".Container-ka.product-form-ka");
   const productList = document.getElementById("product-list");
+  const productSection = document.getElementById("product-section");
+  const formEdit = document.querySelector(".Container-sua");
 
-  btnSubmit.addEventListener("click", function (e) {
-    e.preventDefault();
+  const inputName = document.getElementById("edit-name");
+  const inputPrice = document.getElementById("edit-price");
+  const inputStock = document.getElementById("edit-stock");
 
-    // Lấy dữ liệu từ form
-    const name = document.getElementById("product-name").value;
-    const category = document.getElementById("product-category").value;
-    const desc = document.getElementById("product-description").value;
-    const brand = document.getElementById("product-brand").value;
-    const origin = document.getElementById("product-origin").value;
-    const price = document.getElementById("product-price").value;
-    const stock = document.getElementById("product-stock").value;
+  let currentRow = null;
 
-    // Check dữ liệu bắt buộc
-    if (!name || !price || !stock) {
-      alert("Vui lòng nhập đầy đủ tên sản phẩm, giá và kho hàng.");
-      return;
+  // Mở form sửa khi ấn nút 🛠
+  productList.addEventListener("click", function (e) {
+    if (e.target.classList.contains("btn-edit-product")) {
+      const row = e.target.closest("tr");
+      currentRow = row;
+
+      // Lấy dữ liệu từ dòng
+      const name = row.children[1].textContent;
+      const stock = row.children[2].textContent;
+      const price = row.children[3].textContent;
+
+      // Gán vào form sửa
+      inputName.value = name;
+      inputStock.value = stock;
+      inputPrice.value = price;
+
+      // Ẩn danh sách sản phẩm, hiện form sửa
+      productSection.classList.add("hidden");
+      formEdit.classList.remove("hidden");
+
+      // Cuộn xuống form
+      window.scrollTo({ top: formEdit.offsetTop - 100, behavior: "smooth" });
+    }
+  });
+
+  // Hủy sửa
+  document.querySelector(".Container-sua .Cancel").addEventListener("click", () => {
+    formEdit.classList.add("hidden");
+    productSection.classList.remove("hidden");
+    currentRow = null;
+  });
+
+  // Cập nhật lại dữ liệu khi ấn "Cập nhật"
+  document.querySelector(".Container-sua .Update").addEventListener("click", () => {
+    if (currentRow) {
+      currentRow.children[1].textContent = inputName.value;
+      currentRow.children[2].textContent = inputStock.value;
+      currentRow.children[3].textContent = inputPrice.value;
     }
 
-    // Thêm sản phẩm vào bảng
-    const row = document.createElement("tr");
-    row.setAttribute("data-status", "Hoạt động");
-    row.setAttribute("data-name", name);
-    row.innerHTML = `
-      <td><input type="checkbox"></td>
-      <td>${name}</td>
-      <td>${stock}</td>
-      <td>${price}</td>
-      <td>0</td>
-      <td><span class="status-active">Hoạt động</span></td>
-      <td>
-        <span class="icon btn-delete-product">🗑</span>
-        <span class="icon btn-edit-product">🛠</span>
-      </td>
-    `;
-
-    productList.appendChild(row);
-
-    // Ẩn form, hiện bảng sản phẩm
-    formAddProduct.classList.add("hidden");
+    formEdit.classList.add("hidden");
     productSection.classList.remove("hidden");
-
-    // Reset form
-    document.getElementById("product-name").value = "";
-    document.getElementById("product-category").value = "";
-    document.getElementById("product-description").value = "";
-    document.getElementById("product-brand").value = "No brand";
-    document.getElementById("product-origin").value = "Việt Nam";
-    document.getElementById("product-price").value = "";
-    document.getElementById("product-stock").value = "";
+    currentRow = null;
   });
 });
+
 document.addEventListener("DOMContentLoaded", function () {
   const productList = document.getElementById("product-list");
   const formEditProduct = document.querySelector(".Container-sua");
@@ -310,3 +289,206 @@ document.addEventListener("DOMContentLoaded", function () {
     formEdit.classList.add("hidden");
   });
 });
+// chi tiết đơn hàng
+document.addEventListener("DOMContentLoaded", function () {
+  const detailButtons = document.querySelectorAll(".btn-view-order-detail"); // nút Chi tiết
+  const detailContainer = document.querySelector(".Container-Chitiet");     // phần chi tiết
+  const orderSection = document.getElementById("order-section");            // phần bảng đơn hàng
+  const btnQuayLai = document.querySelector(".Container-Chitiet .Submit");  // nút Quay lại
+
+  detailButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      // Ẩn bảng danh sách đơn hàng
+      if (orderSection) orderSection.classList.add("hidden");
+
+      // Hiện chi tiết
+      detailContainer.classList.remove("hidden");
+
+      // Cuộn xuống phần chi tiết
+      window.scrollTo({ top: detailContainer.offsetTop - 100, behavior: "smooth" });
+    });
+  });
+
+  // Khi bấm "Quay lại"
+  if (btnQuayLai) {
+    btnQuayLai.addEventListener("click", function () {
+      // Hiện lại bảng đơn hàng
+      if (orderSection) orderSection.classList.remove("hidden");
+
+      // Ẩn phần chi tiết
+      detailContainer.classList.add("hidden");
+
+      // Cuộn lên đầu bảng
+      window.scrollTo({ top: orderSection.offsetTop - 100, behavior: "smooth" });
+    });
+  }
+});
+document.addEventListener("DOMContentLoaded", function () {
+  // Ảnh sản phẩm
+  const productImageBox = document.getElementById("product-image-box");
+  const productImageInput = document.getElementById("product-image-input");
+  const productImagePreview = document.getElementById("product-image-preview");
+
+  productImageBox.addEventListener("click", function () {
+    productImageInput.click();
+  });
+
+  productImageInput.addEventListener("change", function () {
+    const file = this.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        productImagePreview.src = e.target.result;
+        productImagePreview.style.display = "block";
+        productImageBox.querySelector(".img-text").style.display = "none";
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+
+  // Ảnh bìa
+  const coverImageBox = document.getElementById("cover-image-box");
+  const coverImageInput = document.getElementById("cover-image-input");
+  const coverImagePreview = document.getElementById("cover-image-preview");
+
+  coverImageBox.addEventListener("click", function () {
+    coverImageInput.click();
+  });
+
+  coverImageInput.addEventListener("change", function () {
+    const file = this.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        coverImagePreview.src = e.target.result;
+        coverImagePreview.style.display = "block";
+        coverImageBox.querySelector(".img-text").style.display = "none";
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const tabs = document.querySelectorAll(".statistic-header .tab");
+  const rows = document.querySelectorAll(".statistic-table tbody tr");
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", function () {
+      // Bỏ active cũ
+      tabs.forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+
+      const selected = tab.textContent.trim(); // "Chưa thanh toán" hoặc "Đã thanh toán"
+
+      rows.forEach(row => {
+        const status = row.children[1].textContent.trim(); // lấy nội dung cột trạng thái
+
+        if (
+          (selected === "Chưa thanh toán" && status === "Chưa hoàn thành") ||
+          (selected === "Đã thanh toán" && status === "Đã hoàn thành")
+        ) {
+          row.style.display = "";
+        } else {
+          row.style.display = "none";
+        }
+      });
+    });
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const searchInput = document.querySelector(".search-input");
+  const rows = document.querySelectorAll(".statistic-table tbody tr");
+
+  searchInput.addEventListener("input", function () {
+    const keyword = searchInput.value.trim().toLowerCase();
+
+    rows.forEach(row => {
+      // Tìm theo toàn bộ nội dung trong cột "Đơn hàng"
+      const orderInfo = row.querySelector("td").innerText.toLowerCase();
+
+      if (orderInfo.includes(keyword)) {
+        row.style.display = "";
+      } else {
+        row.style.display = "none";
+      }
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  function updateUnpaidTotal() {
+    const rows = document.querySelectorAll(".statistic-table tbody tr");
+    let total = 0;
+
+    rows.forEach(row => {
+      const status = row.children[1].textContent.trim(); // Trạng thái
+      const amountText = row.children[3].textContent.trim(); // Số tiền
+
+      if (status === "Chưa hoàn thành") {
+        // Xóa ₫, dấu . hoặc ,
+        const cleaned = amountText.replace(/[₫,.]/g, '').replace(/\s/g, '');
+        const value = parseInt(cleaned, 10);
+
+        if (!isNaN(value)) {
+          total += value;
+        }
+      }
+    });
+
+    // Hiển thị lại dưới dạng VNĐ có dấu .
+    document.getElementById("total-unpaid-amount").textContent = formatVND(total) + "₫";
+  }
+
+  function formatVND(number) {
+    return number.toLocaleString("vi-VN");
+  }
+
+  // Gọi hàm ngay khi trang load
+  updateUnpaidTotal();
+});
+// đã thanh toán tuần này 
+document.addEventListener("DOMContentLoaded", function () {
+  function formatVND(number) {
+    return number.toLocaleString("vi-VN");
+  }
+
+  function updateUnpaidAndPaid() {
+    const rows = document.querySelectorAll(".statistic-table tbody tr");
+
+    let totalUnpaid = 0;
+    let totalPaidThisWeek = 0;
+
+    rows.forEach(row => {
+      const status = row.children[1].textContent.trim(); // Trạng thái
+      const amountText = row.children[3].textContent.trim(); // Số tiền
+
+      // Làm sạch tiền
+      const cleaned = amountText.replace(/[₫,.]/g, '').replace(/\s/g, '');
+      const value = parseInt(cleaned, 10);
+
+      if (!isNaN(value)) {
+        if (status === "Chưa hoàn thành") {
+          totalUnpaid += value;
+        } else if (status === "Đã hoàn thành") {
+          totalPaidThisWeek += value;
+        }
+      }
+    });
+
+    // Cập nhật DOM
+    const unpaidEl = document.getElementById("total-unpaid-amount");
+    const paidEl = document.getElementById("paid-this-week");
+
+    if (unpaidEl) unpaidEl.textContent = formatVND(totalUnpaid) + "₫";
+    if (paidEl) paidEl.textContent = formatVND(totalPaidThisWeek) + "₫";
+  }
+
+  // Gọi khi trang load
+  updateUnpaidAndPaid();
+});
+
+// thanh toán tháng này chưa làm ??? 
+
+
+
+//thanh toán tổng 
